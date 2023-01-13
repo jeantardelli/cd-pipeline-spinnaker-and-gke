@@ -8,5 +8,8 @@ test-app:
 app-run-standalone:
 	python app.py
 
+build-docker-image:
+	bash ./scripts/build_docker.sh
+
 app-run-docker:
-	bash ./run_docker.sh
+	bash ./scripts/run_docker.sh

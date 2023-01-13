@@ -1,10 +1,17 @@
 from flask import Flask
+from flask import jsonify
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "Hello, World!"
+    return "Hello, World! I can multiply any integer number by two at route: /multiply/{number}"
+
+@app.route("/multiply/<int:number>")
+def multiply(number):
+    mult = 2 * number
+    print(f"Mutiplying {number} by two equals...{mult}!")
+    return jsonify(mult)
 
 
 if __name__ == "__main__":
