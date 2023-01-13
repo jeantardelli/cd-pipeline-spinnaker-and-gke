@@ -1,6 +1,5 @@
 install:
-	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+	bash ./scripts/install_dependencies.sh
 
 install-kubectl-component:
 	gcloud components install kubectl
@@ -15,7 +14,7 @@ push-image:
 	bash ./scripts/push_docker_image.sh
 
 test-app:
-	python -m pytest tests/
+	bash ./scripts/test_app.sh
 
 app-run-standalone:
 	python app.py
