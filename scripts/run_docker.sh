@@ -4,4 +4,4 @@
 docker images
 
 # Run Flask app
-docker run --rm -p 5001:5000 ${REGION}-docker.pkg.dev/${PROJECT_ID}/${TAG_IMAGE}/${TAG_IMAGE}:latest
+docker run --rm -p 5001:5000 ${LOCATION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${REPO_NAME}:latest

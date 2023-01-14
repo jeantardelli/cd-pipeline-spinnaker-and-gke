@@ -7,3 +7,7 @@ steps:
   - name: "gcr.io/cloud-builders/docker"
     entrypoint: 'bash'
     args: ['./scripts/build_docker.sh']
+    env:
+      - 'PROJECT_ID=${PROJECT_ID}'
+      - 'LOCATION=${LOCATION}'
+      - 'REPO_NAME=${REPO_NAME}'
