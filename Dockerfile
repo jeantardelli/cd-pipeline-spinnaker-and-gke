@@ -11,8 +11,5 @@ COPY . /app/
 RUN pip install --upgrade pip &&\
     pip install --trusted-host pypi.python.org -r requirements.txt
 
-# Expose port 5000
-EXPOSE 5000
-
 # Run app.py at container launch
-CMD ["python", "app.py"]
+CMD exec gunicorn --bind :${PORT} --workers 1 --threads 8 app:app

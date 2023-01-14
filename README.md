@@ -1,6 +1,14 @@
 # cd-pipeline-spinnaker-and-gke
 Google hands-on lab of Continuous Delivery Pipelines with Spinnaker and Kubernetes Engine
 
+## Env. Variables
+
+To run this repo, it should be defined the following environment variables:
+
+- `PROJECT_ID`
+- `LOCATION`
+- `REPO_NAME`
+
 ## Steps
 
 - Create a virtual environment

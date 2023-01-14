@@ -1,4 +1,4 @@
-install:
+install-dependencies:
 	bash ./scripts/install_dependencies.sh
 
 set-up-artifact-registry:
@@ -6,6 +6,9 @@ set-up-artifact-registry:
 
 check-artifact-registry-or-create-one:
 	bash ./scripts/check_repo_existence_or_create_one.sh
+
+create-gke-cluster:
+	bash ./scripts/create_gke_cluster.sh
 
 build-image:
 	bash ./scripts/build_docker.sh
