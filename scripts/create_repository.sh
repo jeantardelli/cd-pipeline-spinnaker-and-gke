@@ -7,7 +7,7 @@ echo ${PROJECT_ID}
 gcloud config set project ${PROJECT_ID}
 
 # Create the Artifact Registry repo
-gcloud artifacts repositories create ${_ARTIFACT_REPO_NAME} \
+gcloud artifacts repositories create ${REPO_NAME} \
    --repository-format=docker \
    --location=${LOCATION} \
    --description="Docker repository"

@@ -1,11 +1,11 @@
 install:
 	bash ./scripts/install_dependencies.sh
 
-install-kubectl-component:
-	gcloud components install kubectl
-
 set-up-artifact-registry:
 	bash ./scripts/create_repository.sh
+
+check-artifact-registry-or-create-one:
+	bash ./scripts/check_repo_existence_or_create_one.sh
 
 build-image:
 	bash ./scripts/build_docker.sh

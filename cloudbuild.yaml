@@ -1,9 +1,11 @@
 steps:
 
+  # Install dependenies and run tests
   - name: "python"
     entrypoint: 'bash'
     args: ['./scripts/install_dependencies.sh', '&&', './scripts/test_app.sh']
 
+  # Docker build
   - name: "gcr.io/cloud-builders/docker"
     entrypoint: 'bash'
     args: ['./scripts/build_docker.sh']
@@ -11,3 +13,15 @@ steps:
       - 'PROJECT_ID=${PROJECT_ID}'
       - 'LOCATION=${LOCATION}'
       - 'REPO_NAME=${REPO_NAME}'
+
+  # Docker push to Artifact Registry
+  - name: "gcr.io/cloud-builders/gcloud"
+    entrypoint: 'bash'
+    args: ['./scripts/check_repository_existence_or_create_one.sh', '&&', '.scripts/push_docker_image.sh']
+    env:
+      - 'PROJECT_ID=${PROJECT_ID}'
+      - 'LOCATION=${LOCATION}'
+      - 'REPO_NAME=${REPO_NAME}'
+
+images:
+- '${LOCATION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${REPO_NAME}:latest'
