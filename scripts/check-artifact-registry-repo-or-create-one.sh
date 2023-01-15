@@ -4,5 +4,5 @@ RESULT=`gcloud artifacts repositories describe ${REPO_NAME} --location=${LOCATIO
 if [ -z "$RESULT" ]
 then
   echo "The error above means there is no Artifact Repository. Let's create one!"
-  bash ./scripts/create_repository.sh
+  bash ./scripts/create-artifact-registry-repo.sh
 fi

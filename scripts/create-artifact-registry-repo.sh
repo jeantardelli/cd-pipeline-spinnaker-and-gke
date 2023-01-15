@@ -1,13 +1,10 @@
 #!/bin/bash
 
-# Verify if env variable is set
-echo ${PROJECT_ID}
-
-# Set project id for the Google Cloud CLI
-gcloud config set project ${PROJECT_ID}
+gcloud config get-value project
 
 # Create the Artifact Registry repo
 gcloud artifacts repositories create ${REPO_NAME} \
+   --project=${PROJECT_ID}
    --repository-format=docker \
    --location=${LOCATION} \
    --description="Docker repository"
