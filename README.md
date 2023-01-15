@@ -9,10 +9,6 @@ To run this repo, it should be defined the following environment variables:
 - `LOCATION`
 - `REPO_NAME`
 
-## Steps
-
-- Create a virtual environment
-
 ## Running the App
 
 You can run the app in two different modes:
@@ -23,5 +19,7 @@ You can run the app in two different modes:
 
 ## References
 
+[GitOps-style continuous delivery with Cloud Build](https://cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build)
+[Deploying and app in a container image to a GKE cluster](https://cloud.google.com/kubernetes-engine/docs/quickstarts/deploy-app-container-image#python)
 [Get Started with Kubernets Python](https://kubernetes.io/blog/2019/07/23/get-started-with-kubernetes-using-python/)
 [Continuous Delivery Pipelines with Spinnaker and Kubernetes Engine](https://www.cloudskillsboost.google/focuses/552?locale=en&parent=catalog)
