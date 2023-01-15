@@ -1,10 +1,11 @@
-FROM python:3.8.16-slim
+# Use the official lightweight Python image.
+# https://hub.docker.com/_/python
+FROM python:3.7-slim
 
-# Working directory
-WORKDIR /app
-
-# Copy source code to working directory
-COPY . /app/
+# Copy local code to the container image.
+ENV APP_HOME /app
+WORKDIR $APP_HOME
+COPY . ./
 
 # Install packages from requirements.txt
 # hadolint ignore=DL3013

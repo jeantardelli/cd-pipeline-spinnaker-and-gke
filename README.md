@@ -11,6 +11,8 @@ To run this repo, it should be defined the following environment variables:
 
 A [Cloud Build trigger](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers) should be configured too.
 
+Note: Cloud Build Service Account should have permissions to write on Artifact Registry.
+
 ## Running the App
 
 You can run the app in two different modes:

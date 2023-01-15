@@ -15,7 +15,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cd-pipeline-spinnaker-and-gke
+  name: cd-pipeline-spinnaker-and-gke-deploy
 spec:
   replicas: 1
   selector:
@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: cd-pipeline-spinnaker-and-gke
-        image: europe-west1-docker.pkg.dev/push-docker-images-to-gcp/cd-pipeline-spinnaker-and-gke/cd-pipeline-spinnaker-and-gke:latest
+        image: europe-west1-docker.pkg.dev/deploy-app-to-a-gke-cluster/cd-pipeline-spinnaker-and-gke/cd-pipeline-spinnaker-and-gke
         ports:
         - containerPort: 8080
         env:
