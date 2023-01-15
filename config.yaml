@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cd-pipeline-spinnaker-and-gke-service
+    name: cd-pipeline-spinnaker-and-gke
 spec:
   selector:
-    app: cd-pipeline-spinnaker-and-gke-service
+    app: cd-pipeline-spinnaker-and-gke
   ports:
   - port: 80
     targetPort: 8080
@@ -15,7 +15,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cd-pipeline-spinnaker-and-gke-deploy
+  name: cd-pipeline-spinnaker-and-gke-cluster
 spec:
   replicas: 1
   selector:
@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: cd-pipeline-spinnaker-and-gke
-        image: europe-west1-docker.pkg.dev/deploy-app-to-a-gke-cluster/cd-pipeline-spinnaker-and-gke/cd-pipeline-spinnaker-and-gke
+        image: europe-west1-docker.pkg.dev/cicd-data-engineer-pipelines/cd-pipeline-spinnaker-and-gke/cd-pipeline-spinnaker-and-gke:latest
         ports:
         - containerPort: 8080
         env:
