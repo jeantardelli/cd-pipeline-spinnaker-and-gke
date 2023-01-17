@@ -1,6 +1,8 @@
 # cd-pipeline-spinnaker-and-gke
 Google hands-on lab of Continuous Delivery Pipelines with Spinnaker and Kubernetes Engine
 
+[Helm](https://github.com/helm/helm) is a package manager we can use to configure and deploy Kubernetes applications.
+
 ## Env. Variables
 
 To run this repo, it should be defined the following environment variables:
@@ -9,9 +11,24 @@ To run this repo, it should be defined the following environment variables:
 - `LOCATION`
 - `REPO_NAME`
 
-A [Cloud Build trigger](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers) should be configured too.
+Run `source ./scripts/set-environment-variables.sh` for this.
 
+A [Cloud Build trigger](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers) should be configured too.
 Note: Cloud Build Service Account should have permissions to write on Artifact Registry.
+
+
+## To test the app image with k8s
+
+To run the app with k8s just run `kubectl apply -f config.yaml` after the image was pushed to the Artifact Registry.
+
+## To run the app with Spinnaker and Helm
+
+It is necessary to configure Spinnaker and Helm:
+
+1. Configure Helm: `make config-helm`
+2. Configure Spinnaker: `make config-spinnaker`
+3. Deploy Spinnaker chart: `make deploy-spinnaker-chart`
+
 
 ## Running the App
 
